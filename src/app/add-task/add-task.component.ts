@@ -9,7 +9,6 @@ import { TasksService } from '../tasks.service';
 export class AddTaskComponent implements OnInit {
 
   task: string[];
-
   taskValue: string ="";
 
   constructor(private taskService: TasksService) {}

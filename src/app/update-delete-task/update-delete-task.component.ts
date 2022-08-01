@@ -30,10 +30,15 @@ export class UpdateDeleteTaskComponent implements OnInit {
   }
 
   onEnter(id:number){
-    this.task[id] = this.taskValue;
-    this.isEditEnable[id] = ! this.isEditEnable[id];
+    if(this.taskValue != ""){
+      this.task[id] = this.taskValue;
+      this.isEditEnable[id] = ! this.isEditEnable[id];
+    }
+    else{
+      window.alert("Please enter the task");
+    }
   }
-
+  
   onMouseEnter(id:number){
     this.iconVisible[id] = ! this.iconVisible[id];
   }
@@ -43,3 +48,4 @@ export class UpdateDeleteTaskComponent implements OnInit {
   }
 
 }
+
