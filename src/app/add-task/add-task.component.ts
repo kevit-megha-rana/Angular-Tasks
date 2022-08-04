@@ -18,7 +18,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   onSave(){
-    if(this.taskValue != ""){
+    if(this.taskValue.trim()){
       this.task.push(this.taskValue);
       this.taskValue = "";
     }
@@ -28,7 +28,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   onEnter(){
-    if(this.taskValue != ""){
+    if(this.taskValue.trim()){
       this.task.push(this.taskValue);
       this.taskValue = "";
     }

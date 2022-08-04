@@ -8,11 +8,17 @@
     color: black;
 }
 
+.col-xs-12:hover .fa{
+    display:block;
+}
+
+
 .fa{
     margin: 6px;
     float: right;
     cursor: pointer;
     height: 1px;
+    display: none;
 }
 
 .row{

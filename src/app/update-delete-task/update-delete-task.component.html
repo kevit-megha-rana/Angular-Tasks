@@ -3,11 +3,11 @@
     <div >
         <div class="col-xs-12"
             *ngFor="let t of task; let i=index"
-            (mouseenter)="onMouseEnter(i)" (mouseleave)="onMouseLeave(i)">
+            >
             <span *ngIf="!isEditEnable[i]"> 
             {{t}}
-            <i class="fa fa-trash" (click)="deleteTask(i)" *ngIf="iconVisible[i]"></i>
-            <i class="fa fa-pencil" (click)="editTask(i)" *ngIf="iconVisible[i]"></i> 
+            <i class="fa fa-trash" (click)="deleteTask(i)" ></i>
+            <i class="fa fa-pencil" (click)="editTask(i)" ></i> 
             </span>
             <input type="text" placeholder="Add Task" [(ngModel)]="taskValue" (keydown.enter)="onEnter(i)" *ngIf="isEditEnable[i]">                    
         </div>
