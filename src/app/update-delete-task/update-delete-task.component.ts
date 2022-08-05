@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TasksService } from '../tasks.service';
 
 interface ITask {task: string,
-  isEditEnable: boolean};
+                 isEditEnable: boolean};
 
 @Component({
   selector: 'app-update-delete-task',
@@ -12,11 +12,8 @@ interface ITask {task: string,
 
 export class UpdateDeleteTaskComponent implements OnInit {
 
-  
   taskValue: string;
   indexValue : number;
-
-  
 
   tasks: ITask[] = [];
 
@@ -35,7 +32,7 @@ export class UpdateDeleteTaskComponent implements OnInit {
 
   editTask(index:number){
     this.taskValue = this.tasks[index].task;
-    this.tasks[index].isEditEnable = !this.tasks[index].isEditEnable;
+    this.tasks[index].isEditEnable = true;
    
   }
 
