@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { TasksService } from '../tasks.service';
-
-interface ITask {task: string,
-                 isEditEnable: boolean};
+import { Component, Input, OnInit } from '@angular/core';
+import { ITask, TasksService } from '../tasks.service';
 
 @Component({
   selector: 'app-update-delete-task',
@@ -20,9 +17,9 @@ export class UpdateDeleteTaskComponent implements OnInit {
   constructor(private tasksService: TasksService) { }
 
   ngOnInit(): void {
-    this.tasksService.tasks.forEach((ele)=>{
-      this.tasks.push({task:ele,isEditEnable: false})
-      console.log(ele);    
+    this.tasks = this.tasksService.tasks;
+    this.tasksService.taskArray.forEach((ele)=>{
+      this.tasks.push({task:ele,isEditEnable: false}); 
     }) 
   }
 

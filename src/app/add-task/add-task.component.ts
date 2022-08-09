@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TasksService } from '../tasks.service';
+import { ITask, TasksService } from '../tasks.service';
 
 @Component({
   selector: 'app-add-task',
@@ -8,18 +8,21 @@ import { TasksService } from '../tasks.service';
 })
 export class AddTaskComponent implements OnInit {
 
-  task: string[];
+  tasks: ITask[] = [];
   taskValue: string ="";
-
+  
   constructor(private taskService: TasksService) {}
 
   ngOnInit(): void {
-    this.task = this.taskService.tasks;
+    this.tasks = this.taskService.tasks;
   }
 
   onSave(){
     if(this.taskValue.trim()){
-      this.task.push(this.taskValue);
+      this.tasks.push({
+        task:this.taskValue,
+        isEditEnable:false
+      });
       this.taskValue = "";
     }
     else{
@@ -29,7 +32,10 @@ export class AddTaskComponent implements OnInit {
 
   onEnter(){
     if(this.taskValue.trim()){
-      this.task.push(this.taskValue);
+      this.tasks.push({
+        task:this.taskValue,
+        isEditEnable:false
+      });
       this.taskValue = "";
     }
     else{
